@@ -1,0 +1,41 @@
+21                  -> 12
+907                 ->
+531                 -> 513
+135
+2071                -> 2017
+1027
+414
+
+123456798
+123456789
+1234567908
+
+
+function nextSmaller(n) {
+  n = n.toString().split('');
+  let newArray = [];
+  for(let i = n.length-1, j = 1; i>0; i--){
+    j = 1;    
+    console.log(`n[i] = ${n[i]}, n[i-1] = ${n[i-j]}`);
+    if(n[i-j]n[i]){
+      if((n[i-j]) === '0'){
+        console.log(`HAJSDHKJ HALSLJD j = ${j}, n[i+j] = ${n[i+j]}`);
+       ++j;
+      }  
+      console.log(` hej n[i] = ${n[i]}, n[i-1] = ${n[i-j]}, j=${j}`);
+      newArray = [n[i],n[i-j]];
+      console.log(` newArray = ${newArray}, n[i] ${n[i]}, n[i-j=${j}] ${n[i-j]} `);
+      newArray = n.filter( x => x === newArray[0] || x === newArray[1])
+      n = n.filter( x => x != newArray[0] && x != newArray[1])
+      console.log(` ${n} , ${newArray}`);
+      n.unshift(newArray[0]);
+      console.log(` ${n} , ${newArray}`);
+      n.unshift(newArray[1]);
+      console.log(` ${n} , ${newArray}`);
+      return parseInt(n.join(''));
+    }
+  }
+  return -1;
+}
+
+console.log(nextSmaller(907));
